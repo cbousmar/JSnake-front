@@ -3,7 +3,7 @@ import Transition from '../../assets/sounds/transition.mp3'
 import { KEY_TRANSITION } from '../../constant';
 
 
-export default class UIOptions extends Phaser.Scene
+export default class UIOption extends Phaser.Scene
 {
   constructor() {
       super("ui-option");
@@ -59,7 +59,7 @@ export default class UIOptions extends Phaser.Scene
     button.on('pointerout', () => { button.setFontSize(32);});
     button.on('pointerdown', () => {
       this.transition.play();
-      this.scene.start('game-scene');
+      this.scene.start('game-start');
     });
   }
 }
