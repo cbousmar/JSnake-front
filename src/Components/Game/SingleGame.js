@@ -5,7 +5,7 @@ import eventsCenter from './EventCenter';
 import Snake from './Snake';
 //import assets
 import eatSoundAsset from '../../assets/sounds/apple_crunch1.mp3';
-import gridAsset from '../../assets/img/Grid32_1024x768.png'
+import gridAsset from '../../assets/img/grid_small.png'
 import appleAsset from '../../assets/img/RedApple.png';
 import magentaSnakeAsset from '../../assets/img/GreenSnake32.png';
 import { SQUARE_SIZE, GRID_KEY, KEY_EAT_SOUND } from '../../constant';
@@ -20,6 +20,7 @@ class SingleGame extends Phaser.Scene
   constructor()
   {
     super('game-scene');
+    this.grid = null;
     this.apple = undefined;
     this.snake = undefined;
     this.direction = null;
@@ -71,12 +72,12 @@ class SingleGame extends Phaser.Scene
     this.direction = 'right';
     this.nextDirection = null;
     //Creating the grid
-    this.add.image(SQUARE_SIZE * 16, SQUARE_SIZE * 12, GRID_KEY);
+    this.grid = this.add.image(this.scale.width * 0.5, this.scale.height * 0.5 + (SQUARE_SIZE / 2), GRID_KEY);
     //Creating food
     this.apple = this.createFood();
     this.apple.setScale(0.99,0.99);
     //Creating the snakes
-    this.snake = this.createSnake((5 * SQUARE_SIZE), (7 * SQUARE_SIZE), 'right', SNAKE_KEY);
+    this.snake = this.createSnake((5 * SQUARE_SIZE), (8 * SQUARE_SIZE), 'right', SNAKE_KEY);
     //UIScene for scores
     this.scene.run('ui-single-score');
     //Enabling keyboard inputs
@@ -136,7 +137,7 @@ class SingleGame extends Phaser.Scene
       }
       //collision with a wall
       if(this.snake.getBody().getAt(0).x <= -32 || this.snake.getBody().getAt(0).x >= 544 ||
-        this.snake.getBody().getAt(0).y <= -32 || this.snake.getBody().getAt(0).y >= 480)
+        this.snake.getBody().getAt(0).y <= 0 || this.snake.getBody().getAt(0).y >= 512)
       {
         this.shutdown();
       }
@@ -164,7 +165,7 @@ class SingleGame extends Phaser.Scene
    * @param {number} X coordinate of the position on the grid
    * @param {number} Y coordinate of the position on the grid
    * @param {string} direction it's orientation 
-   * @param {sprite} asset sprite to use
+   * @param {string} asset key of the sprite to use
    * @returns snake object
    */
   createSnake(X, Y, direction, asset)
@@ -178,7 +179,7 @@ class SingleGame extends Phaser.Scene
   {
     //Random placement of the apple
     var randomX = Math.floor(Math.random() * 17) * SQUARE_SIZE;
-    var randomY = Math.floor(Math.random() * 15) * SQUARE_SIZE;
+    var randomY = SQUARE_SIZE + Math.floor(Math.random() * 15) * SQUARE_SIZE;
     //Genereting apple
     var newApple = this.physics.add.image(randomX + (SQUARE_SIZE / 2), randomY + (SQUARE_SIZE / 2), APPLE_KEY);
     newApple.enableBody = true;
@@ -199,7 +200,7 @@ class SingleGame extends Phaser.Scene
       var isOccupied = false;
       //Random placement of the apple
       var randomX = Math.floor(Math.random() * 17) * SQUARE_SIZE;
-      var randomY = Math.floor(Math.random() * 15) * SQUARE_SIZE;
+      var randomY = SQUARE_SIZE + Math.floor(Math.random() * 15) * SQUARE_SIZE;
       //Check if the RANDOM coordinates are in the snake or not
       var checkSnake = this.snake.getBody();
       for(let i = 0; i < checkSnake.length; i++)

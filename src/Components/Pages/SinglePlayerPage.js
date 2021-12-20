@@ -37,7 +37,7 @@ function SinglePage() {
   const config = {
     type: Phaser.AUTO,
     width: 544,
-    height: 480,
+    height: 512,
     backgroundColor: '#BDEB5E',
     physics: {
       default: 'arcade',
