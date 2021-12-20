@@ -37,7 +37,7 @@ export default class UIOption extends Phaser.Scene
     //Defining the center of the screen
     const centerX = this.scale.width * 0.5;
     const centerY = this.scale.height * 0.5;
-    this.add.text(centerX, 50, 'OPTIONS',
+    this.add.text(centerX, 50, 'OPTION',
       {
         fontSize: '48px',
         color: '#665847',
