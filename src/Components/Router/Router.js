@@ -1,6 +1,5 @@
 import HomePage from "../Pages/HomePage";
 import TwoPlayer from "../Pages/TwoPlayerPage";
-import GamePage from "../Pages/GamePage";
 import SinglePlayer from "../Pages/SinglePlayerPage.js";
 import ScoreboardSinglePage from "../Pages/ScoreboardSinglePage";
 import SettingsPage from "../Pages/SettingsPage.js";
@@ -29,7 +28,6 @@ const routes = {
   "/login2": LoginPage2,
   "/register": RegisterPage,
   "/logout": Lougout,
-  "/game": GamePage, //EASTER EGG ;
 };
 
 /**
