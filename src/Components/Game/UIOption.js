@@ -2,12 +2,11 @@ import Phaser from 'phaser';
 import Transition from '../../assets/sounds/transition.mp3'
 import { KEY_TRANSITION } from '../../constant';
 
-
 export default class UIOption extends Phaser.Scene
 {
   constructor() {
-      super("ui-option");
-      this.transition = undefined;
+    super("ui-option");
+    this.transition = undefined;
   }
 
 
@@ -20,7 +19,7 @@ export default class UIOption extends Phaser.Scene
   }
 
 
-  create(tabScore)
+  create()
   {
     //Sound for the transition
     this.transition = this.sound.add(KEY_TRANSITION,
@@ -38,9 +37,9 @@ export default class UIOption extends Phaser.Scene
     //Defining the center of the screen
     const centerX = this.scale.width * 0.5;
     const centerY = this.scale.height * 0.5;
-    this.add.text(centerX, 100, 'OPTIONS',
+    this.add.text(centerX, 50, 'OPTIONS',
       {
-        fontSize: '52px',
+        fontSize: '48px',
         color: '#665847',
         fontStyle: 'bold'
       }

@@ -102,7 +102,7 @@ export default class GameOver extends Phaser.Scene
       }).setOrigin(0.5);
     }
     //Button to restart the game
-    const button = this.add.text(centerX, centerY + 100, 'Restart',
+    const button = this.add.text(centerX, centerY + 50, 'Restart',
       {
         fontSize: '32px',
         color: '#665847',
@@ -117,6 +117,22 @@ export default class GameOver extends Phaser.Scene
       this.endSound.stop();
       this.scene.stop('ui-score');
       this.scene.start('game-scene');
+    });
+  
+    //Button to launch option' scene
+    const buttonOption = this.add.text(centerX, centerY + 150, 'OPTION',
+      {
+        fontSize: '24px',
+        color: '#665847',
+        fontStyle: 'bold'
+      }
+    ).setOrigin(0.5);
+    buttonOption.setInteractive();
+    buttonOption.on('pointerover', () => { buttonOption.setFontSize(32); });
+    buttonOption.on('pointerout', () => { buttonOption.setFontSize(24); });
+    buttonOption.on('pointerdown', () => {
+      this.transition.play();
+      this.scene.start('ui-option');
     });
   }
 }

@@ -4,6 +4,7 @@ import SingleGame from "../Game/SingleGame";
 import UISingleScore from "../Game/UISingleScore";
 import GameOver from "../Game/UIGameOver";
 import Start from "../Game/UIStart";
+import UIOption from "../Game/UIOption";
 
 var game;
 
@@ -43,7 +44,7 @@ function SinglePage() {
       arcade: {y: 0}
     },
     parent: "playGame",
-    scene: [Start, SingleGame, UISingleScore, GameOver]
+    scene: [Start, SingleGame, UISingleScore, UIOption, GameOver]
   };
 
   // there could be issues when a game was quit (events no longer working)
