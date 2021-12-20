@@ -34,19 +34,41 @@ export default class Start extends Phaser.Scene
         delay: 0
       }
     );
-    const button = this.add.text(this.scale.width * 0.5, this.scale.height * 0.5, 'START',
+  
+    //Defining the center of the screen
+    const centerX = this.scale.width * 0.5;
+    const centerY = this.scale.height * 0.5;
+    
+    //Button to launch the game scene
+    const buttonStart = this.add.text(centerX, centerY + 100, 'START',
       {
         fontSize: '32px',
         color: '#665847',
         fontStyle: 'bold'
       }
     ).setOrigin(0.5);
-    button.setInteractive();
-    button.on('pointerover', () => { button.setFontSize(48); });
-    button.on('pointerout', () => { button.setFontSize(32); });
-    button.on('pointerdown', () => {
+    buttonStart.setInteractive();
+    buttonStart.on('pointerover', () => { buttonStart.setFontSize(48); });
+    buttonStart.on('pointerout', () => { buttonStart.setFontSize(32); });
+    buttonStart.on('pointerdown', () => {
       this.transition.play();
       this.scene.start('game-scene');
+    });
+    
+    //Button to launch option' scene
+    const buttonOption = this.add.text(centerX, centerY - 100, 'OPTION',
+      {
+        fontSize: '32px',
+        color: '#665847',
+        fontStyle: 'bold'
+      }
+    ).setOrigin(0.5);
+    buttonOption.setInteractive();
+    buttonOption.on('pointerover', () => { buttonOption.setFontSize(48); });
+    buttonOption.on('pointerout', () => { buttonOption.setFontSize(32); });
+    buttonOption.on('pointerdown', () => {
+      this.transition.play();
+      this.scene.start('ui-option');
     });
   }
 }
