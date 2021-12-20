@@ -40,7 +40,7 @@ export default class Start extends Phaser.Scene
     const centerY = this.scale.height * 0.5;
     
     //Button to launch the game scene
-    const buttonStart = this.add.text(centerX, centerY + 100, 'START',
+    const buttonStart = this.add.text(centerX, centerY - 100, 'START',
       {
         fontSize: '32px',
         color: '#665847',
@@ -56,7 +56,7 @@ export default class Start extends Phaser.Scene
     });
     
     //Button to launch option' scene
-    const buttonOption = this.add.text(centerX, centerY - 100, 'OPTION',
+    const buttonOption = this.add.text(centerX, centerY + 100, 'OPTION',
       {
         fontSize: '32px',
         color: '#665847',
