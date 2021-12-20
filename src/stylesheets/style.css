@@ -1,0 +1,159 @@
+body {
+    background-color: #e8dcca;
+}
+.navbar {
+    background-color: #e3caac;
+}
+
+#navbar {
+    background-color: #e3caac;
+}
+
+#text-green{
+    color: #a3d977;
+}
+
+#btn{
+    background-color: #a3d977;
+    color: white;
+}
+
+#button{
+    background-color: #a3d977;
+    
+}
+#button:hover{
+    background-color: #e3caac;
+}
+
+#btnToSingle{
+    background-color: #a3d977;
+}
+#btnToSingle:hover{
+    background-color: #e3caac;
+}
+
+#btnToDual{
+    background-color: #a3d977;
+    
+}
+#btnToDual:hover{
+    background-color: #e3caac;
+}
+
+#btnToPlay{
+    width: 11%;
+    background-color: #a3d977;
+    
+}
+#btnToPlay:hover{
+    background-color: #e3caac;
+}
+
+#btnToScoreboard{
+    width: 11%;
+    background-color: #a3d977;
+    
+}
+#btnToScoreboard:hover{
+    background-color: #e3caac;
+}
+
+#btnToSettings{
+    width: 11%;
+    background-color: #a3d977;
+    
+}
+#btnToSettings:hover{
+    background-color: #e3caac;
+}
+/* ========================= Buttons of the TwoPlayer page ========================= */
+/* COOP button */
+#btnToCOOP{
+    background-color: #a3d977;
+    
+}
+#btnToCOOP:hover{
+    background-color: #e3caac;
+}
+/* Battle button */
+#btnToBattle{
+    background-color: #a3d977;
+    
+}
+#btnToBattle:hover{
+    background-color: #e3caac;
+}
+/* Scoreboard button */
+#btnToScoreboardCoop{
+    background-color: #a3d977;
+    
+}
+#btnToScoreboardCoop:hover{
+    background-color: #e3caac;
+}
+
+
+/* ========================= second navbar ========================= */
+/* Single button */
+#singleToHome{
+    cursor: pointer;
+}
+#singleToScore{
+    cursor: pointer;
+}
+#singleToSettings{
+    cursor: pointer;
+}
+#singleToTwoPlayers{
+    cursor: pointer;
+}
+/* COOP button */
+#coopToHome{
+    cursor: pointer;
+}
+#coopToScore{
+    cursor: pointer;
+}
+#coopToSettings{
+    cursor: pointer;
+}
+#coopToSinglePlayer{
+    cursor: pointer;
+}
+#coopToTwoPlayer{
+    cursor: pointer;
+}
+/* two player button */
+#toHome{
+    cursor: pointer;
+}
+#toSinglePlayer{
+    cursor: pointer;
+}
+/* battle button */
+#battleToHome{
+    cursor: pointer;
+}
+#battleToSettings{
+    cursor: pointer;
+}
+#battleToSinglePlayer{
+    cursor: pointer;
+}
+#battleToTwoPlayer{
+    cursor: pointer;
+}
+/* top navbar button */
+#btnToLogin1{
+    cursor: pointer;
+}
+#btnToRegister{
+    cursor: pointer;
+}
+#btnToLogin2{
+    cursor: pointer;
+}
+#btnToLogout{
+    cursor: pointer;
+}
